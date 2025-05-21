@@ -1,11 +1,12 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 body {
 
   &.us-modal__active {
     overflow: hidden;
 
-    @media (max-width: $modal-threshold) {
+    @media (max-width: variables.$modal-threshold) {
       position: fixed;
       top: 0;
       right: 0;
@@ -24,7 +25,7 @@ body {
   padding: 60px 20px;
   z-index: 999999;
 
-  @media (max-width: $modal-threshold) {
+  @media (max-width: variables.$modal-threshold) {
     padding: 0;
   }
   .us-modal {
@@ -41,7 +42,7 @@ body {
     overflow: hidden;
     z-index: 3;
 
-    @media (max-width: $modal-threshold) {
+    @media (max-width: variables.$modal-threshold) {
       box-shadow: none;
       max-width: none;
       top: 0;
@@ -67,7 +68,7 @@ body {
       height: 50px;
       top: 0;
       right: 0;
-      color: $text-color;
+      color: variables.$text-color;
       cursor: pointer;
       text-align: center;
       line-height: 50px;
@@ -94,7 +95,7 @@ body {
         position: relative;
         width: 0;
         height: 100%;
-        background: lighten($accent-color,15%);
+        background: color.adjust(variables.$accent-color,$lightness: 15%);
         transition: width 0.24s;
       }
     }
@@ -117,7 +118,7 @@ body {
           font-size: 14px;
           line-height: 50px;
           vertical-align: middle;
-          color: $text-color;
+          color: variables.$text-color;
           border: none;
           background: transparent;
           border-bottom: 1px solid #ddd;
@@ -127,7 +128,7 @@ body {
           border-radius: 0;
 
           &:focus {
-            border-bottom-color: $material-blue;
+            border-bottom-color: variables.$material-blue;
             background-color: #f7f8fc;
           }
         }
@@ -143,7 +144,7 @@ body {
           height: 50px;
           vertical-align: middle;
           font-size: 20px;
-          color: $text-color;
+          color: variables.$text-color;
           z-index: 2;
         }
       }
@@ -181,7 +182,7 @@ body {
       height: 50px;
       padding: 0 15px;
       background: #fff;
-      border-top: 1px solid lighten($black, 60%);
+      border-top: 1px solid color.adjust(variables.$black, $lightness: 60%);
 
       &__metadata {
         position: relative;
@@ -200,12 +201,12 @@ body {
       font-size: 12px;
       font-weight: normal;
       line-height: 50px;
-      color: $grey-color;
+      color: variables.$grey-color;
       cursor: pointer;
       z-index: 1;
 
       &:hover {
-        color: $black;
+        color: variables.$black;
       }
       &__next {
         margin-left: 10px;
@@ -240,7 +241,7 @@ body {
           padding: 20px;
           font-size: 13px;
           font-weight: normal;
-          color: $grey-color;
+          color: variables.$grey-color;
         }
       }
     }
@@ -251,7 +252,7 @@ body {
       text-decoration: none;
       transition: all ease 0.32s;
 
-      @media (max-width: $modal-threshold) {
+      @media (max-width: variables.$modal-threshold) {
         padding: 24px 34px 24px 25px;
       }
       &:hover {
@@ -259,13 +260,13 @@ body {
 
         &__excerpt,
         .icon {
-          color: $black;
+          color: variables.$black;
         }
       }
       &__title {
         display: inline-block;
         max-width: 100%;
-        color: $text-color;
+        color: variables.$text-color;
         font-size: 16px;
         font-weight: bold;
         padding: 1px 1px 2px 1px;
@@ -280,7 +281,7 @@ body {
         display: block;
         font-size: 13px;
         line-height: 160%;
-        color: lighten($text-color, 10%);
+        color: color.adjust(variables.$text-color, $lightness: 10%);
         transition: color 0.24s;
 
         em {
@@ -294,9 +295,9 @@ body {
         right: 15px;
         margin-top: -4px;
         font-size: 12px;
-        color: $grey-color;
+        color: variables.$grey-color;
 
-        @media (max-width: $modal-threshold) {
+        @media (max-width: variables.$modal-threshold) {
           right: 12px;
         }
       }

@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 #footer {
   position: relative;
@@ -16,17 +17,17 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    color: lighten($dark-mode-site-background, 40%);
+    color: color.adjust(variables.$dark-mode-site-background, $lightness: 40%);
   }
   a {
-    color: $grey-color;
+    color: variables.$grey-color;
 
     @media (prefers-color-scheme: dark) {
-      color: lighten($dark-mode-site-background, 80%);
+      color: color.adjust(variables.$dark-mode-site-background, $lightness: 80%);
     }
     &:hover {
-      background: rgba($material-orange, 0.2);
-      color: darken($material-orange, 0%);
+      background: rgba(variables.$material-orange, 0.2);
+      color: color.adjust(variables.$material-orange, $lightness: -0%);
     }
   }
 }
@@ -36,7 +37,7 @@
 .search {
   position: relative;
   width: 100%;
-  max-width: $article-width;
+  max-width: variables.$article-width;
   margin: 0 auto 20px auto;
   z-index: 2;
 
@@ -70,22 +71,22 @@
     line-height: 36px;
     height: 36px;
     font-size: 14px;
-    font-family: $base-font-family;
+    font-family: variables.$base-font-family;
     border: none;
     border-radius: 0 !important;
-    background: $black;
+    background: variables.$black;
     color: white;
     box-sizing: border-box;
     transition: all 0.24s ease;
 
     @media (prefers-color-scheme: dark) {
-      background: lighten($dark-mode-post-background, 5%);
+      background: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
     }
     &:focus {
-      background: darken($black, 70%);
+      background: color.adjust(variables.$black, $lightness: -70%);
 
       @media (prefers-color-scheme: dark) {
-        background: darken($dark-mode-post-background, 2%);
+        background: color.adjust(variables.$dark-mode-post-background, $lightness: -2%);
       }
     }
   }

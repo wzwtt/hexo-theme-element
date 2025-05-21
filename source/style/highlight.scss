@@ -1,4 +1,5 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 /* Tomorrow Theme */
 .tomorrow-comment, pre .comment, pre .title {
@@ -35,13 +36,13 @@
 
 pre code {
   display: block;
-  background-color: $white;
+  background-color: variables.$white;
   color: #4d4d4c;
   line-height: 1.5;
   border: 1px solid #ccc;
   padding: 10px;
 
   @media (prefers-color-scheme: dark) {
-    background-color: lighten($dark-mode-post-background, 5%);
+    background-color: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
   }
 }

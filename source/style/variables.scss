@@ -1,3 +1,4 @@
+@use "sass:color";
 $fallback-font-family: Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", Microsoft JhengHei, WenQuanYi Micro Hei, "Microsoft YaHei", sans-serif;
 $base-font-family: "Oswald", $fallback-font-family;
 $code-font-family: "inconsolata", Consolas, monospace, sans-serif;
@@ -56,10 +57,10 @@ $whitegrey: #e5eff5;
 $pink: #fa3a57;
 $brown: #a3821a;
 
-$dark-mode: lighten($darkgrey, 2%);
+$dark-mode: color.adjust($darkgrey, $lightness: 2%);
 $dark-mode-site-background: #090a0b;
 $dark-mode-post-background: #191b1f;
-$dark-mode-text-color: lighten($dark-mode-site-background, 80%);
+$dark-mode-text-color: color.adjust($dark-mode-site-background, $lightness: 80%);
 
 $article-width: 728px;
 

@@ -1,4 +1,5 @@
-@import './variables';
+@use "sass:color";
+@use 'variables';
 
 .site-header {
   position: relative;
@@ -42,34 +43,34 @@
       transition: all 0.24s;
 
       &.b {
-        background-color: $black;
-        color: $white;
+        background-color: variables.$black;
+        color: variables.$white;
 
         @media (prefers-color-scheme: dark) {
-          background-color: lighten($dark-mode-site-background, 10%);
+          background-color: color.adjust(variables.$dark-mode-site-background, $lightness: 10%);
         }
         &:hover {
-          color: $accent-color;
-          background-color: $black;
+          color: variables.$accent-color;
+          background-color: variables.$black;
 
           @media (prefers-color-scheme: dark) {
-            background-color: $dark-mode-site-background;
+            background-color: variables.$dark-mode-site-background;
           }
         }
       }
       &.w {
         background: transparent;
-        color: $black;
+        color: variables.$black;
 
         @media (prefers-color-scheme: dark) {
-          color: $accent-color;
+          color: variables.$accent-color;
         }
         &:hover {
-          color: $white;
-          background-color: $black;
+          color: variables.$white;
+          background-color: variables.$black;
 
           @media (prefers-color-scheme: dark) {
-            background-color: lighten($dark-mode-site-background, 10%);
+            background-color: color.adjust(variables.$dark-mode-site-background, $lightness: 10%);
           }
         }
       }

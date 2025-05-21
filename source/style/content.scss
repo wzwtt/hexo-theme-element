@@ -1,21 +1,22 @@
-@import "variables";
+@use "sass:color";
+@use "variables";
 
 .article {
   position: relative;
   width: 100%;
-  max-width: $article-width;
+  max-width: variables.$article-width;
   margin: 0 auto 20px auto;
 
   @media (prefers-color-scheme: dark) {
-    color: $dark-mode-text-color;
+    color: variables.$dark-mode-text-color;
   }
-  @media (max-width: $on-phone) {
+  @media (max-width: variables.$on-phone) {
     padding: 20px;
   }
   .article-header {
     padding: 20px 0 40px 0;
 
-    @media (max-width: $on-phone) {
+    @media (max-width: variables.$on-phone) {
       padding: 0 0 40px 0;
     }
 
@@ -24,14 +25,14 @@
       line-height: 1.2;
       margin-bottom: 0;
 
-      @media (max-width: $on-phone) {
+      @media (max-width: variables.$on-phone) {
         font-size: 1.5em;
       }
     }
   }
   .article-meta {
     font-size: 14px;
-    color: lighten($grey-color, 10%);
+    color: color.adjust(variables.$grey-color, $lightness: 10%);
     padding-left: 1px;
   }
 }
@@ -41,24 +42,24 @@
 .article-entry,
 .post-excerpt {
   position: relative;
-  font-family: $article-font-family;
+  font-family: variables.$article-font-family;
   font-size: 18px;
-  color: lighten($text-color, 3%);
+  color: color.adjust(variables.$text-color, $lightness: 3%);
   padding-bottom: 30px;
 
   @media (prefers-color-scheme: dark) {
-    color: $dark-mode-text-color;
+    color: variables.$dark-mode-text-color;
   }
   a {
-    color: darken($accent-color, 2%);
+    color: color.adjust(variables.$accent-color, $lightness: -2%);
 
     &:hover {
-      color: darken($accent-color, 3%);
-      background: rgba($accent-color, 0.1);
+      color: color.adjust(variables.$accent-color, $lightness: -3%);
+      background: rgba(variables.$accent-color, 0.1);
     }
     &:active {
-      background: rgba($accent-color, 0.2);
-      color: $white;
+      background: rgba(variables.$accent-color, 0.2);
+      color: variables.$white;
     }
   }
   h1,
@@ -68,11 +69,11 @@
   h5,
   h6 {
     position: relative;
-    font-family: $base-font-family;
+    font-family: variables.$base-font-family;
     font-weight: bold;
     margin: 40px auto 30px auto;
 
-    @media (max-width: $on-phone) {
+    @media (max-width: variables.$on-phone) {
       left: 15px;
     }
     &::before {
@@ -80,7 +81,7 @@
       left: -20px;
       top: 0;
       content: "#";
-      color: $material-green;
+      color: variables.$material-green;
       font-weight: normal;
     }
   }
@@ -93,17 +94,17 @@
     font-size: 13px;
     margin: 20px 0;
     padding: 10px 15px;
-    background-color: $background-color;
+    background-color: variables.$background-color;
     overflow: auto;
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($dark-mode-post-background, 5%);
+      background-color: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
     }
     td.gutter {
       padding-right: 10px;
-      color: lighten($grey-color, 8%);
+      color: color.adjust(variables.$grey-color, $lightness: 8%);
       font-size: 12px;
-      border-right: 1px solid darken($background-color, 5%);
+      border-right: 1px solid color.adjust(variables.$background-color, $lightness: -5%);
     }
     td.code {
       padding-left: 10px;
@@ -126,27 +127,27 @@
     width: 100%;
     margin: 20px 0;
     padding: 0 20px;
-    border-left: 4px solid $material-green;
+    border-left: 4px solid variables.$material-green;
   }
   code {
-    color: darken($brand-color, 2%);
+    color: color.adjust(variables.$brand-color, $lightness: -2%);
     padding: 3px 5px;
     margin: 0 2px;
     border-radius: 2px;
     white-space: nowrap;
     font-size: 0.8em;
-    background-color: $background-color;
+    background-color: variables.$background-color;
 
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($dark-mode-post-background, 5%);
-      color: $dark-mode-text-color;
+      background-color: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
+      color: variables.$dark-mode-text-color;
     }
   }
   pre {
     white-space: pre;
 
     code {
-      color: $black;
+      color: variables.$black;
       padding: 0 0 0 30px;
       margin: 0;
       font-size: 1em;
@@ -155,7 +156,7 @@
       white-space: inherit;
 
       @media (prefers-color-scheme: dark) {
-        background-color: lighten($dark-mode-post-background, 5%);
+        background-color: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
       }
     }
 
@@ -164,7 +165,7 @@
     }
   }
 
-  @media (max-width: $on-phone) {
+  @media (max-width: variables.$on-phone) {
     font-size: 16px;
 
     h1,
@@ -212,19 +213,19 @@
     margin: 0 5px 5px 0;
     line-height: normal;
     font-size: 14px;
-    background-color: $background-color;
+    background-color: variables.$background-color;
     border-radius: 2px;
 
     @media (prefers-color-scheme: dark) {
-      background-color: $dark-mode-post-background;
-      color: $white;
+      background-color: variables.$dark-mode-post-background;
+      color: variables.$white;
     }
     &:hover {
-      background-color: $black;
-      color: $white;
+      background-color: variables.$black;
+      color: variables.$white;
 
       @media (prefers-color-scheme: dark) {
-        background-color: lighten($dark-mode-post-background, 5%);
+        background-color: color.adjust(variables.$dark-mode-post-background, $lightness: 5%);
       }
     }
     &::before {
@@ -238,5 +239,5 @@
 
 #comments {
   position: relative;
-  padding: $spacing-unit 0;
+  padding: variables.$spacing-unit 0;
 }

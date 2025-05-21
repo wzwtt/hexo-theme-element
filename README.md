@@ -9,7 +9,7 @@ This theme depends on the following Hexo plugins:
 * hexo-generator-tag
 * hexo-generator-feed
 * hexo-renderer-ejs
-* hexo-renderer-scss
+* hexo-renderer-sass
 * hexo-renderer-marked
 * hexo-pagination
 * hexo-all-minifier

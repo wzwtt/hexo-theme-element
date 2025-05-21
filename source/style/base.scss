@@ -1,4 +1,5 @@
-@import "./variables";
+@use "sass:color";
+@use "variables";
 
 * {
   box-sizing: border-box;
@@ -17,10 +18,10 @@ html {
 body {
   height: 100%;
   max-height: 100%;
-  font-family: $base-font-family;
+  font-family: variables.$base-font-family;
   font-size: 1.8rem;
   line-height: 1.5em;
-  color: $black;
+  color: variables.$black;
   -webkit-font-feature-settings: 'kern' 1;
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1;
@@ -73,7 +74,7 @@ h6 {
 }
 
 a {
-  color: $black;
+  color: variables.$black;
   text-decoration: none;
   transition: all 0.24s ease;
 
@@ -88,24 +89,24 @@ pre {
 }
 
 ::-webkit-input-placeholder {
-  color: lighten($grey-color, 20%);
+  color: color.adjust(variables.$grey-color, $lightness: 20%);
   font-weight: 300;
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: lighten($grey-color, 20%);
+  color: color.adjust(variables.$grey-color, $lightness: 20%);
   font-weight: 300;
 }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: lighten($grey-color, 20%);
+  color: color.adjust(variables.$grey-color, $lightness: 20%);
   font-weight: 300;
 }
 
 :-ms-input-placeholder {
-  color: lighten($grey-color, 20%);
+  color: color.adjust(variables.$grey-color, $lightness: 20%);
   font-weight: 300;
 }
 
@@ -149,11 +150,11 @@ pre {
   z-index: 10;
 
   @media (prefers-color-scheme: dark) {
-    background-color: $dark-mode-site-background;
+    background-color: variables.$dark-mode-site-background;
   }
   &.is_post_page {
     @media (prefers-color-scheme: dark) {
-      background-color: lighten($dark-mode-site-background, 10%);
+      background-color: color.adjust(variables.$dark-mode-site-background, $lightness: 10%);
     }
   }
   .overlay {
@@ -184,7 +185,7 @@ pre {
   position: relative;
   width: 0;
   height: 2px;
-  background-color: rgba(lighten($accent-color, 5%), 0.7);
+  background-color: rgba(color.adjust(variables.$accent-color, $lightness: 5%), 0.7);
   transition: all 0.5s ease;
 }
 
